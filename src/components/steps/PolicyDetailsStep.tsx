@@ -1,0 +1,63 @@
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+interface PolicyDetailsStepProps {
+  onContinue: () => void;
+  onBack: () => void;
+}
+
+export const PolicyDetailsStep = ({ onContinue, onBack }: PolicyDetailsStepProps) => {
+  return (
+    <div className="p-6">
+      {/* Profile Header */}
+      <div className="flex gap-4 mb-6 pb-6 border-b border-border">
+        <div className="relative">
+          <div className="w-20 h-20 bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="w-full h-full bg-muted" />
+          </div>
+          <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+            Live
+          </div>
+        </div>
+        <div className="flex-1">
+          <p className="text-sm text-muted-foreground mb-1">Proposer Name</p>
+          <p className="font-semibold text-foreground mb-2">Mr Niraj Test</p>
+          <p className="text-sm text-muted-foreground mb-1">Plan Name</p>
+          <p className="text-sm text-foreground">Bandhan Life iGuarantee Vishwas</p>
+        </div>
+      </div>
+
+      {/* Policy Details */}
+      <h3 className="font-semibold text-foreground mb-6">Policy Details</h3>
+
+      <div className="space-y-4 mb-6">
+        <div>
+          <Badge className="mb-2 bg-primary text-primary-foreground">Plan Type</Badge>
+          <p className="text-foreground font-semibold">Savings Plan</p>
+        </div>
+
+        <DetailItem label="Premium Amount" value="₹62,700" />
+        <DetailItem label="Sum Assured" value="₹6,00,000" />
+        <DetailItem label="Frequency" value="YEARLY" />
+        <DetailItem label="Policy Term" value="15 Years" />
+        <DetailItem label="Premium Paying Term" value="12 Years" />
+      </div>
+
+      <div className="flex gap-3">
+        <Button variant="outline" onClick={onBack} className="flex-1">
+          Back
+        </Button>
+        <Button onClick={onContinue} className="flex-1">
+          Continue
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+const DetailItem = ({ label, value }: { label: string; value: string }) => (
+  <div>
+    <p className="text-sm text-primary font-medium mb-1">{label}</p>
+    <p className="text-foreground font-semibold">{value}</p>
+  </div>
+);
