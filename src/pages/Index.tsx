@@ -1,7 +1,7 @@
-import { VideoSubmissionFlow } from "@/components/VideoSubmissionFlow";
+import { InsuranceFlow } from "@/components/InsuranceFlow";
 
 const Index = () => {
-  return <VideoSubmissionFlow />;
+  return <InsuranceFlow />;
 };
 
 export default Index;
