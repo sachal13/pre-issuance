@@ -80,7 +80,7 @@ export const FixedHeader = ({
 
         {/* Proposer Details */}
         <div className="space-y-1 mb-3">
-          <div className="flex justify-between text-xs">
+          <div className="flex items-center gap-2 text-xs">
             <span className="text-muted-foreground">Proposer:</span>
             <span className="font-semibold text-foreground">{proposerName}</span>
           </div>
